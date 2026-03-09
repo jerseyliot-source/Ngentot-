@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ello + Dewani</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  font-family:Arial;
+  background:#001a26;
+  overflow:hidden;
+}
+
+/* gelembung */
+.bubble{
+  position:absolute;
+  bottom:-50px;
+  width:20px;
+  height:20px;
+  background:rgba(255,255,255,0.4);
+  border-radius:50%;
+  animation:naik 10s infinite;
+}
+
+@keyframes naik{
+  from{transform:translateY(0);}
+  to{transform:translateY(-110vh);}
+}
+
+/* tulisan utama */
+.main{
+  font-size:50px;
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  z-index:2;
+}
+
+.ello{
+  background:black;
+  color:white;
+  padding:10px 20px;
+  border-radius:10px;
+}
+
+.plus{
+  color:red;
+  font-size:55px;
+  animation:putar 2s linear infinite;
+}
+
+@keyframes putar{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+.dewani{
+  background:orange;
+  color:black;
+  padding:10px 20px;
+  border-radius:10px;
+}
+
+/* text bawah */
+.semangat{
+  margin-top:20px;
+  font-size:30px;
+  font-weight:bold;
+  color:white;
+  z-index:2;
+}
+</style>
+</head>
+
+<body>
+
+<div class="main">
+<span class="ello">ELLO</span>
+<span class="plus">+</span>
+<span class="dewani">DEWANI</span>
+</div>
+
+<div class="semangat">⚡ Semangat pacaran nya ⚡</div>
+
+<!-- gelembung aquarium -->
+<script>
+for(let i=0;i<25;i++){
+ let b=document.createElement("div");
+ b.className="bubble";
+ b.style.left=Math.random()*100+"%";
+ b.style.animationDuration=(5+Math.random()*5)+"s";
+ b.style.width=b.style.height=(10+Math.random()*20)+"px";
+ document.body.appendChild(b);
+}
+</script>
+
+</body>
+</html>
